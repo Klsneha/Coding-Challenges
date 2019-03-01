@@ -1,0 +1,48 @@
+package BinaryTrees;
+
+import BinaryTrees.Insertion.Node;
+
+public class SameTree {
+
+	Node root1;
+	Node root2;
+	static class Node{
+		int key;
+		Node left,right;
+		
+		Node(int d)
+		{
+			key=d;
+			left=right=null;
+		}
+	}
+	
+	public boolean checkTree(Node root1,Node root2)
+	{
+		if(root1==null && root2==null)
+			return true;
+		else if(root1==null || root2==null)
+			return false;
+		if(root1.key==root2.key)
+			return checkTree(root1.left,root2.left) && checkTree(root1.left,root2.left);
+		return false;
+		
+	}
+	
+	public static void main(String args[])
+	{
+		SameTree s=new SameTree();
+		s.root1=new Node(10);
+		s.root1.left=new Node(16);
+		s.root1.right=new Node(15);
+		s.root1.left=new Node(18);
+		
+		s.root2=new Node(10);
+		s.root2.left=new Node(16);
+		s.root2.right=new Node(15);
+		s.root2.left=new Node(18);
+		
+		System.out.println(s.checkTree(s.root1, s.root2));
+		
+	}
+}

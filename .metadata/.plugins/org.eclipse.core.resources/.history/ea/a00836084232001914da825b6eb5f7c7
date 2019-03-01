@@ -1,0 +1,42 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Inuti {
+
+	public static void main(String[] args) {
+		int[][] meetings = {
+			      {1230, 1300},
+			      { 845,  900},
+			      {1300, 1500},
+			    };
+		System.out.println("\n"+isAvailable(meetings, 1330, 1400)+"\n");  //false
+		System.out.println(isAvailable(meetings,  830,  930)+"\n");  //=> false
+		System.out.println(isAvailable(meetings,  855,  930)+"\n");  //=> false
+		System.out.println(isAvailable(meetings, 1500, 1600)+"\n"); // => true
+		System.out.println(isAvailable(meetings,  845,  900)+"\n"); //false
+
+		
+		
+	}
+	public static boolean isAvailable(int[][] meetings, int starttime, int endtime) {
+		
+		Arrays.sort(meetings, new Comparator<int[]>() {
+			
+			public int compare(int[] entry1, int[] entry2) {
+				if(entry1[1] > entry2[1])
+					return 1;
+				else 
+					return -1;
+			}
+		});		
+//		for (int i = 0; i < meetings.length; i++) 
+//            for (int j = 0; j < meetings[i].length; j++) 
+//                System.out.print(meetings[i][j] + " "); 		
+		for (int m =0; m < meetings.length; m++) {
+			if (((starttime >= meetings[m][0]) && (endtime <= meetings[m][1])) || ((starttime <= meetings[m][0]) && (endtime <= meetings[m][1])) )
+			      return false;
+			
+		}
+		return true;
+	}
+}

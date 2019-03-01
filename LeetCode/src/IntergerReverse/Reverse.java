@@ -1,0 +1,31 @@
+package IntergerReverse;
+
+public class Reverse {
+
+	public int reverse(int x)
+	{
+		
+		int temp;
+		int number=0;
+		while(x!=0)
+		{
+			temp=x%10;
+			
+			if(Math.abs(number)>(Integer.MAX_VALUE)/10)
+			{
+				return 0;
+			}
+			number=number*10+temp;
+			x=x/10;
+		}
+		return number;
+	}
+	public static void main(String args[])
+	{
+		Reverse r=new Reverse();
+		int number=r.reverse(1534236469);
+		
+		System.out.println("number is"+number);
+		System.out.println(Integer.MAX_VALUE);
+	}
+}

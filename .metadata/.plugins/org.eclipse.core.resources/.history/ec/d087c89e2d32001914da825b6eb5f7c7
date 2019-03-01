@@ -1,0 +1,16 @@
+package SubdomainVisitCount;
+
+public class Solution {
+
+	 
+	
+	public static void main(String args[])
+	{
+		String s="9001 discuss.leetcode.com";
+		String[] sarr=s.split("\\s+");
+		for(int i=0;i<sarr.length;i++)
+		{
+			System.out.println(sarr[i]);
+		}
+	}
+}

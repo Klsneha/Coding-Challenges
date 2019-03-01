@@ -1,0 +1,23 @@
+package SubstringWithKChar;
+
+public class Solution {
+
+	int countKDistinctString(String st,int num)
+	{
+		for(int i=0;i<st.length();i++)
+		{
+			for(int j=i+1;j<st.length();j++)
+			{
+				System.out.println(st.substring(i,j));
+			}
+		}
+		
+	}
+	public static void main(String[] args) {
+		
+		String st="pqpqs";
+		Solution s=new Solution();
+		int num=2;
+		System.out.println(s.countKDistinctString(st, num));
+	}
+}

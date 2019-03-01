@@ -1,0 +1,50 @@
+package ShiftingLetters;
+
+public class Solution {
+
+public String shiftingLetters(String S, int[] shifts) {
+	
+	char arr[]=S.toCharArray();
+	String st="";
+	int ac1;
+	for(int i=0;i<shifts.length;i++)
+	{
+		for(int j=0;j<=i;j++)
+		{
+			int ascii=(int)(arr[j]+shifts[i]);
+			
+			if((int)(arr[j]+shifts[i])>122)
+			{
+				
+				ac1=(int)(arr[j]+shifts[i]);
+				while(ac1>122)
+				{
+					ac1=(int) 'a'+(char)(ac1-122-1);
+				}
+			
+				
+				arr[j]=(char) (ac1);
+			}
+			else
+			{
+				arr[j]=(char) (arr[j]+shifts[i]);
+			}
+			
+		}
+	}
+	
+	for(int k=0;k<arr.length;k++)
+	{
+		st=st+arr[k];
+	}
+	return st;
+    }
+public static void main(String[] args) {
+	
+	Solution s=new Solution();
+	String S="bad";
+	int shifts[]= {};
+	System.out.println(s.shiftingLetters(S, shifts));
+	
+}
+}

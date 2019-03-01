@@ -1,0 +1,45 @@
+package longestCommonPrefix;
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+    	
+    	
+    		String s1=strs[0];
+    		String s2=strs[1];
+    		
+    		
+    		int len1=s1.length();
+    		int len2=s2.length();
+    		int counter= len1<=len2? len1:len2;
+    		int n=0;
+    		String prefix="";
+    		while(n<counter)
+    		{
+    			if(s1.charAt(n)==s2.charAt(n))
+    			{
+    				prefix=prefix+s1.charAt(n);
+    				
+    			}
+    			n=n+1;
+    		}
+    		if(prefix=="")
+    		{
+    			System.out.println("There is no common prefix");
+    		}
+    		else
+    		{
+    			System.out.println("Contains prefix");
+    		}
+    		
+    		System.out.println(prefix);
+    	
+       
+    	return "";
+    }
+    
+    public static void main(String args[])
+    {
+    	Solution s=new Solution();
+    	String str[]= {"flower","abcdflow","flight"};
+    	s.longestCommonPrefix(str);
+    }
+}

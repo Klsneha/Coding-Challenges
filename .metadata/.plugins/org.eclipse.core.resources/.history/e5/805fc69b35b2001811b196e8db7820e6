@@ -1,0 +1,35 @@
+package strStr;
+
+public class Solution {
+
+	public int strStr(String haystack, String needle) {
+	       
+        String temp;
+        int index=-1;
+        int len=needle.length();
+        for(int j=0;j<haystack.length();j++)
+        {
+            if(haystack.charAt(j)==needle.charAt(0))
+            {
+                temp=haystack.substring(j,j+len);
+                if(needle.equals(temp))
+                {
+                    index= j;
+                    break;
+                }
+            }
+        }
+        return index;
+            
+        
+    }
+    public static void main(String args[])
+    {
+        String haystack="aaa";
+        String needle="aa";
+        
+        Solution s=new Solution();
+        int index=s.strStr(haystack,needle);
+        System.out.println(index);
+    }
+}

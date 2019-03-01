@@ -1,0 +1,40 @@
+package BinaryTrees;
+
+public class Insertion {
+
+	Node root;
+	static class Node{
+		int key;
+		Node left,right;
+		
+		Node(int d)
+		{
+			key=d;
+			left=right=null;
+		}
+	}
+	
+	public void inorderTraversal(Node n)
+	{
+		if(n!=null)
+		{
+			inorderTraversal(n.left);
+			System.out.println(n.key);
+			inorderTraversal(n.right);
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Insertion i=new Insertion();
+		i.root=new Node(10);
+		i.root.left=new Node(11);
+		i.root.left.left=new Node(7);
+		i.root.left.right=new Node(5);
+		i.root.right=new Node(9);
+		i.root.right.left=new Node(15);
+		i.root.right.right=new Node(8);
+		
+		i.inorderTraversal(i.root);
+	}
+}

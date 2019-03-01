@@ -1,0 +1,23 @@
+package reshapethematrix;
+
+public class ReShapeTheMatrix {
+
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        
+    }
+	public static void main(String args[])
+	{
+		int arr[][]= {{1,2},
+				{3,4}};
+		ReShapeTheMatrix r=new ReShapeTheMatrix();
+		int mat[][]=r.matrixReshape(arr, 2, 4);
+		for(int i=0;i<mat.length;i++)
+		{
+			for(int j=0;j<mat[i].length;j++)
+			{
+				System.out.print(mat[i][j]);
+			}
+			System.out.println(" ");
+		}
+	}
+}

@@ -1,0 +1,19 @@
+package RevealCardsInIncreasingOrder;
+
+public class Solution {
+
+	 public int[] deckRevealedIncreasing(int[] deck) {
+	        
+	  }
+	 
+	 public static void main(String args[])
+	 {
+		 int arr[]= {17,13,11,2,3,5,7};
+		 Solution s=new Solution();
+		 int sol[]=s.deckRevealedIncreasing(arr);
+		 for(int i=0;i<sol.length;i++)
+		 {
+			 System.out.println(sol[i]);
+		 }
+	 }
+}

@@ -1,0 +1,102 @@
+package BinaryTrees;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import BinaryTrees.MAxSumFromRoot2LeaF.Node;
+
+public class IsBinaryTree {
+	
+	Node root=null;
+	class Node{
+		int key;
+		Node left;
+		Node right;
+		
+		Node(int d)
+		{
+			this.key=d;
+			left=right=null;
+		}
+	}
+	
+	public void inorderTraversal(Node n)
+	{
+		if(n!=null)
+		{
+			inorderTraversal(n.left);
+			System.out.println(n.key);
+			inorderTraversal(n.right);
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		IsBinaryTree s=new IsBinaryTree();
+		s.insert(s.root,10);
+		s.insert(s.root,0);
+		s.insert(s.root,25);
+		s.insert(s.root,-1);
+		s.insert(s.root,21);
+		s.insert(s.root,16);
+		s.insert(s.root,32);
+		s.inorderTraversal(s.root);
+		System.out.println(s.check(s.root,Integer.MIN_VALUE, Integer.MAX_VALUE));
+		
+		
+		
+	}
+	
+	public boolean check(Node root, int min,int max)
+	{
+		if(root==null)
+			return true;
+		if(root.left==null && root.right==null)
+			return true;
+		if(root.key>min && root.key<max)
+		{
+			return check(root.left,min,root.key) && check(root.right,root.key,max);
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public void insert(Node root,int key)
+	{
+	
+		Queue<Node> q=new LinkedList<Node>();
+		
+		if(root==null)
+		{
+			this.root=new Node(key);
+			return;
+		}
+		q.add(root);
+		
+		while(!q.isEmpty())
+		{
+		 Node temp=q.remove();
+		 if(temp.left==null)
+		 {
+			 temp.left=new Node(key);
+			 break;
+		 }
+		 else {
+			 q.add(temp.left);
+		 }
+		 
+		 if(temp.right==null)
+		 {
+			 temp.right=new Node(key);
+			 break;
+		 }
+		 else
+		 {
+			 q.add(temp.right);
+		 }
+		}
+		
+	}
+
+}

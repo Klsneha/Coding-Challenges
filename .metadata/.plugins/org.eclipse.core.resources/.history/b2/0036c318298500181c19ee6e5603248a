@@ -1,0 +1,44 @@
+package selectionSort;
+
+public class SelectionSort {
+	
+	public static void sort(int arr[])
+	{
+		int min=0;
+		int n=arr.length;
+		int index=0;
+		int temp=0;
+		//System.out.println(n);
+		for(int i=0;i<=n-1;i++)
+		{
+			min=arr[i];
+			index=i;
+		
+			for(int j=i+1; j<=n-1;j++)
+			{
+				if(arr[j]<min)
+				{
+					min=arr[j];
+					index=j;
+				}
+			}
+			
+			temp=arr[i];
+			arr[i]=min;
+			arr[index]=temp;
+		}
+		
+		for(int l=0;l<=n-1;l++)
+		{
+			System.out.print(arr[l]+" ");
+		}
+	}
+	
+	
+	public static void main(String args[])
+	{
+		int[] a= {10,2,8,1,9,3};
+		sort(a);
+	}
+
+}

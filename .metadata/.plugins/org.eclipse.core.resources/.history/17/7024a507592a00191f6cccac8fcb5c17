@@ -1,0 +1,57 @@
+package SingleLinkedList;
+
+import SingleLinkedList.SearchAnElementRecursive.Node;
+
+public class NthNodeFromEnd {
+	Node head=null;
+	Node tail=null;
+	class Node{
+		int data;
+		Node next;
+		
+		Node(int d){
+			this.data=d;
+			this.next=null;
+		}
+	}
+	
+	public void append(int d)
+	{
+		Node new_node=new Node(d);
+		if(head==null)
+		{
+			head=new_node;
+			tail=head;
+		}
+		else
+		{
+			tail.next=new_node;
+			tail=new_node;
+		}
+		
+	}
+	
+	public void traversal()
+	{
+		Node n=head;
+		while(n!=null)
+		{
+			System.out.println(n.data);
+			n=n.next;
+		}
+	}
+	
+	
+	public static void main(String args[])
+	{
+		NthNodeFromEnd d=new NthNodeFromEnd();
+		d.append(0);
+		d.append(1);
+		d.append(2);
+		d.append(3);
+		d.append(4);
+		d.append(5);
+		d.traversal();
+		
+	}
+}

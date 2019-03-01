@@ -1,0 +1,22 @@
+package PanCakeSorting;
+
+import java.util.Arrays;
+
+public class Solution {
+	
+/*public List<Integer> pancakeSort(int[] A) {
+        
+	for
+        
+  }*/
+
+public static void main(String args[])
+{
+	int arr[]= {3,2,4,1};
+	int arr1[]= {3,2,4,1};
+	
+	System.out.println(Arrays.equals(arr, arr1));
+	
+}
+
+}

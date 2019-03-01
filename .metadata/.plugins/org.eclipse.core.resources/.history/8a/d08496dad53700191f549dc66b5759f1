@@ -1,0 +1,10 @@
+package DynamicDispatch;
+public class Demo {
+
+	Animal a1=new Animal();
+	Dog d1=new Dog();
+	Animal ad=new Dog();
+	
+	
+}
+

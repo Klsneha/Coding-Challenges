@@ -1,0 +1,43 @@
+package SubstringWithKChar;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution {
+
+	int countKDistinctString(String st,int num)
+	{
+		int count=0;
+		for(int i=0;i<st.length();i++)
+		{
+			for(int j=i;j<st.length();j++)
+			{
+				String substr=st.substring(i,j);
+				if(substr.length()>=num)
+				{
+				Set<Character> se=new HashSet<Character>();
+				for(int k=0;k<substr.length();k++)
+				{
+					se.add(substr.charAt(k));
+					
+				}
+				if(se.size()!=num)
+					break;
+				else
+					count++;
+				}
+				
+			}
+			
+		}
+		return count;
+		
+	}
+	public static void main(String[] args) {
+		
+		String st="pqpqs";
+		Solution s=new Solution();
+		int num=2;
+		System.out.println(s.countKDistinctString(st, num));
+	}
+}

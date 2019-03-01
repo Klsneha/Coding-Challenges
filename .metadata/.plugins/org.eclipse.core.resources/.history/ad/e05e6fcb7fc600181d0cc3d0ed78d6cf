@@ -1,0 +1,37 @@
+package reshapethematrix;
+
+public class ReShapeTheMatrix {
+
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        int mat[][]=new int[r][c];
+        int m=0,n=0;
+    	for(int i=0;i<nums.length;i++)
+    	{
+    		for(int j=0;j<nums[i].length;j++)
+    		{
+    			while(m<=r)
+    			{
+    				while(n<=c)
+    				{
+    					mat[m][n]=nums[i][j];
+    				}
+    			}
+    		}
+    	}
+    }
+	public static void main(String args[])
+	{
+		int arr[][]= {{1,2},
+				{3,4}};
+		ReShapeTheMatrix r=new ReShapeTheMatrix();
+		int mat[][]=r.matrixReshape(arr, 1, 4);
+		for(int i=0;i<mat.length;i++)
+		{
+			for(int j=0;j<mat[i].length;j++)
+			{
+				System.out.print(mat[i][j]);
+			}
+			System.out.println(" ");
+		}
+	}
+}

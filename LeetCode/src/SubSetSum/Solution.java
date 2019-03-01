@@ -1,0 +1,33 @@
+package SubSetSum;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution {
+
+public List<List<Integer>> subsets(int[] nums) {
+	
+	List <List<Integer>> l=new ArrayList<List<Integer>>();
+	
+	
+	for(int i=0;i<nums.length;i++)
+	{
+		List<Integer> li=new ArrayList<Integer>();
+		for(int j=i;j<nums.length;j++)
+		{
+			li.add(nums[j]);
+		}
+		l.add(li);
+		
+	}
+	return l;
+        
+    }
+public static void main(String[] args) {
+	
+	Solution s=new Solution();
+	int nums[]= {1,2,3};
+	s.subsets(nums);
+	
+}
+}

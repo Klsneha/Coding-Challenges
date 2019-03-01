@@ -1,0 +1,68 @@
+package SingleLinkedList;
+
+public class insertNode {
+
+	Node head;
+	public class Node{
+		
+		int data;
+		Node next;
+		
+		Node(int d)
+		{
+			this.data=d;
+			this.next=null;
+		}
+	}
+	
+	public void insertAtFront(Node d)
+	{
+		d.next=head;
+		head=d;
+	}
+	
+	public void insertAtMiddle(Node newNode,Node prevNode)
+	{
+		newNode.next=prevNode.next;
+		prevNode.next=newNode;
+	}
+	
+	public void traversal()
+	{
+		Node n=head;
+		while(n!=null)
+		{
+			System.out.println(n.data);
+			n=n.next;
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		insertNode n=new insertNode();
+		n.head=n.new Node(1);
+		Node sec=n.new Node(2);
+		Node three=n.new Node(3);
+		Node five=n.new Node(5);
+		
+		n.head.next=sec;
+		sec.next=three;
+		three.next=five;
+		
+		n.traversal();
+		System.out.println("**");
+		Node zero=n.new Node(0);
+		n.insertAtFront(zero);
+		
+		n.traversal();
+		
+		System.out.println("In middle");
+		Node four=n.new Node(4);
+		n.insertAtMiddle(four, three);
+		n.traversal();
+		
+		
+		
+				
+	}
+}

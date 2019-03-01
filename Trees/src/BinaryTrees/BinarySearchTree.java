@@ -1,0 +1,57 @@
+package BinaryTrees;
+
+public class BinarySearchTree {
+
+	Node root;
+	public static class Node{
+		int key;
+		Node left,right;
+		Node(int data)
+		{
+			key=data;
+			left=right=null;
+		}
+	}
+	
+	public void inOrderTRavsersal(Node root) {
+		if(root==null)
+			return;
+		else
+			inOrderTRavsersal(root.left);
+		System.out.println(root.key);
+		inOrderTRavsersal(root.right);
+	}
+	
+	public Node search(Node node,int key)
+	{
+		if(node==null)
+			return null;
+		if(node.key==key)
+			return node;
+		if(node.key<key)
+		{
+			return search(node.right,key);
+		}
+		else {
+			return search(node.left,key);
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		BinarySearchTree b=new BinarySearchTree();
+		b.root=new Node(10);
+		b.root.left=new Node(-5);
+		b.root.right=new Node(30);
+		b.root.left.left=new Node(-10);
+		b.root.left.right=new Node(0);
+		b.root.left.right.right=new Node(5);
+		b.root.right.left=new Node(20);
+		b.root.right.right=new Node(36);
+		
+		b.inOrderTRavsersal(b.root);
+		Node n=b.search(b.root,20);
+		System.out.println(n.key);
+		
+	}
+}

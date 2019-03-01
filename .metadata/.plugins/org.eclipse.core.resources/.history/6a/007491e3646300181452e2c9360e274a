@@ -1,0 +1,13 @@
+package encapsulationDemo;
+
+public class Car extends Vehicle {
+
+	private int Number;
+	public void display()
+	{
+		setNumber(23);
+		Number=getNumber();
+		System.out.println("The Number is"+Number);
+	}
+	
+}

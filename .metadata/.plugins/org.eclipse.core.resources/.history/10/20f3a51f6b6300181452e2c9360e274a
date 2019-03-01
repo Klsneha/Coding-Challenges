@@ -1,0 +1,28 @@
+package encapsulationDemo;
+
+public class Car extends Vehicle {
+
+	private int Number;
+	Car(String brand)
+	{
+		System.out.println(brandS);
+	}
+	public void display()
+	{
+		setNumber(23);
+		Number=getNumber();
+		System.out.println("The Number is"+Number);
+	}
+	
+	public static void main(String args[])
+	{
+		Car c=new Car("Maruthi");
+		c.display();
+				
+	}
+	
+}
+
+/*Basic implementation of encapulation
+1) Car and Vehicle classes
+*/

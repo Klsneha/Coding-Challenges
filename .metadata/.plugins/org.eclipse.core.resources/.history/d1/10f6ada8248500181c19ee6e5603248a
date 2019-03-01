@@ -1,0 +1,16 @@
+package selectionSort;
+
+public class SelectionSort {
+	
+	public static void sort(int arr[])
+	{
+		int min=0;
+		int n=arr.length;
+	}
+	public static void main(String args[])
+	{
+		int[] a= {14,3,2,10,12,5,6};
+		sort(a);
+	}
+
+}

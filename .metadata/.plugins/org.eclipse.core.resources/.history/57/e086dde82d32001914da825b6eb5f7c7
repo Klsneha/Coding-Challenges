@@ -1,0 +1,29 @@
+package SubdomainVisitCount;
+
+import java.util.HashMap;
+
+public class Solution {
+
+	 
+	
+	public static void main(String args[])
+	{
+		String s[]= {"9001 discuss.leetcode.com", "9001 leetcode.com", "9001 com"};
+		HashMap<String,Integer> map=new HashMap<>();
+		
+		for(int i=0;i<s.length;i++)
+		{
+			String[] sarr=s[i].split("\\s+");
+			if(map.containsKey(sarr[1]))
+			{
+				int count=map.get(sarr[1]);
+				map.put(sarr[1],count++);
+			}
+			else
+			{
+				
+				map.put(sarr[1],Integer.parseInt(sarr[0]));
+			}
+		}
+	}
+}

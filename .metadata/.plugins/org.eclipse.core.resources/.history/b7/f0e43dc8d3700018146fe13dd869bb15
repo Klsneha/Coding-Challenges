@@ -1,0 +1,27 @@
+package IntergerReverse;
+
+public class Reverse {
+
+	public long reverse(int x)
+	{
+		
+		int temp;
+		long number=0;
+		while(x!=0)
+		{
+			temp=x%10;
+			number=number*10+temp;
+			x=x/10;
+			
+			
+		}
+		return number;
+	}
+	public static void main(String args[])
+	{
+		Reverse r=new Reverse();
+		long number=r.reverse(1534236469);
+		
+		System.out.println("number is"+(int)number);
+	}
+}

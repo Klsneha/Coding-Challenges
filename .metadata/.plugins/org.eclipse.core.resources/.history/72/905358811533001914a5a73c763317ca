@@ -1,0 +1,36 @@
+package BinaryTrees;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class SumBinaryTree {
+
+	Node root=null;
+	class Node{
+		int key;
+		Node left;
+		Node right;
+		
+		Node(int d)
+		{
+			this.key=d;
+			left=right=null;
+		}
+	}
+	
+	public void insert(Node root, int d)
+	{
+		Queue<Node> q=new LinkedList<Node>();
+		if(root==null)
+			root=new Node(d);
+		else
+		{
+			q.add(root);
+			while(root.left!=null || root.right!=null)
+			{
+				q.add(root.left);
+			}
+		}
+		
+	}
+}

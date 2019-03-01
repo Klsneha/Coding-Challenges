@@ -1,0 +1,70 @@
+package LongestSubstringKCharacters;
+
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+public class Solution {
+	
+public int longestSubstring(String s, int k) {
+        
+	int max=0;
+      for(int i=0;i<s.length();i++)
+      {
+    	  for(int j=i+1;j<=s.length();j++)
+    	  {
+    		  boolean flag=false;
+    		  String sub=s.substring(i, j);
+    		  System.out.println(sub);
+    		  if(sub.length()>=k)
+    		  {
+    			  HashMap<Character,Integer> map=new HashMap<Character,Integer>();
+    			  for(int l=0;l<sub.length();l++)
+    			  {
+    				  System.out.println(sub.charAt(l));
+    				  if(map.containsKey(sub.charAt(l)))
+    				  {
+    					  int val=map.get(s.charAt(l));
+    	    			  map.put(s.charAt(l),val+1);  
+    				  }
+    				  else
+    				  {
+    					  map.put(s.charAt(l),1);
+    				  }
+    					  
+    			  }
+    			  
+    			  for(Map.Entry<Character, Integer> entry: map.entrySet())
+    			  {
+    				  if(entry.getValue()>=k)
+    				  {
+    					  flag=true;
+    					  continue;
+    				  }
+    				  else
+    				  {
+    					  flag=false;
+    					  break;
+    				  }
+    			  }
+    			  
+    			  if(flag)
+    			  {
+    				if(max<sub.length())
+    					max=sub.length();
+    				System.out.println(max);
+    			  }
+    			  
+    		  }
+    	  }
+      }
+      return max;
+    }
+public static void main(String[] args) {
+	String st="ababbc";
+	Solution s=new Solution();
+	int k=2;
+	System.out.println(s.longestSubstring(st, k));
+	
+}
+
+}

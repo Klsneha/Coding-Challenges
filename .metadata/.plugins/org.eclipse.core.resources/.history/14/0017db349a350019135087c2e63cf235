@@ -1,0 +1,38 @@
+package PalindromicSubString;
+
+public class Solution {
+	
+public int countSubstrings(String s) {
+	
+	int count=0;
+	for(int i=0;i<s.length();i++)
+	{
+		for(int j=i+1;j<=s.length();j++)
+		{
+			if(isPalindrome(s.substring(i, j)));
+				count++;
+		}
+	}
+      return count;  
+    }
+
+public boolean isPalindrome(String st)
+{
+	String revstr="";
+	for(int i=st.length()-1;i>=0;i--)
+		revstr=revstr+st.charAt(i);
+	
+	if(revstr.equals(st))
+		return true;
+	else
+		return false;
+}
+
+public static void main(String[] args) {
+	
+	Solution s=new Solution();
+	String str="aaaba";
+	System.out.println(s.countSubstrings(str));
+}
+
+}

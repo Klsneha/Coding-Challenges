@@ -1,0 +1,46 @@
+package BinaryTrees;
+
+import BinaryTrees.BinaryTreeWithInnerClass.Node;
+
+public class BinarySearchTreeInsert {
+
+	static Node root;
+	public static class Node{
+		int key;
+		Node left,right;
+		Node(int data)
+		{
+			key=data;
+			left=right=null;
+		}
+		Node(){
+			root=null;
+		}
+	}
+	
+	public void insert(Node root,int key)
+	{
+		if(root==null)
+		{
+			root=new Node(key);
+		}
+		if(root.key<key)
+			insert(root.right,key);
+		else
+			insert(root.left,key);
+	}
+	
+	public static void main(String args[])
+	{
+		BinarySearchTreeInsert b=new BinarySearchTreeInsert();
+		b.root=new Node(10);
+		b.insert(root, -5);
+		b.insert(root, 30);
+		b.insert(root, -10);
+		b.insert(root, 0);
+		b.insert(root, 5);
+		b.insert(root, 20);
+		b.insert(root, 36);
+		
+	}
+}

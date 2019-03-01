@@ -1,0 +1,38 @@
+package RevealCardsInIncreasingOrder;
+
+import java.util.Arrays;
+
+public class Solution {
+
+	 public int[] deckRevealedIncreasing(int[] deck) {
+	        Arrays.sort(deck);
+	        int p1=0;
+	        int p2=(int)(deck.length/2)+1;
+	        int sol[]=new int[deck.length];
+	        int k=0;
+	        for(int i=0;i<deck.length;i++)
+	        {
+	        	sol[k]=deck[i];
+	        	k=k+2;
+	        }
+	        k=0;
+	        for(int j=1;j<deck.length;j++)
+	        {
+	        	sol[k]=deck[j];
+	        	k=k+2;
+	        }
+	        return sol;
+	        
+	  }
+	 
+	 public static void main(String args[])
+	 {
+		 int arr[]= {17,13,11,2,3,5,7};
+		 Solution s=new Solution();
+		 int sol[]=s.deckRevealedIncreasing(arr);
+		 for(int i=0;i<sol.length;i++)
+		 {
+			 System.out.println(sol[i]);
+		 }
+	 }
+}

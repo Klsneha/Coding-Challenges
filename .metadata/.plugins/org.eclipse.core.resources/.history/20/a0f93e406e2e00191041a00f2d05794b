@@ -1,0 +1,35 @@
+package PositionOfLargeGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution {
+
+	public List<List<Integer>> largeGroupPositions(String S) {
+        
+		List<List<Integer>> li=new ArrayList<List<Integer>>();
+		
+		for(int i=0;i<S.length();i++)
+		{
+			int j=i+1;
+			while(j<S.length())
+			{
+				if(S.charAt(i)!=S.charAt(j))
+					break;
+				else
+					j++;
+			}
+			if(j-i>=3)
+			{
+				List<Integer> l=new ArrayList<Integer>();
+				l.add(i+1);
+				l.add(j);
+				li.add(l);
+			}
+			
+	
+		}
+		return li;
+	    
+    }
+}

@@ -1,0 +1,48 @@
+package ConsecutiveSubArray;
+
+public class Solution {
+	
+	public static void main(String args[])
+	{
+		int arr1[]= {1,4,3,2,5,6};
+		int arr2[]= {1,4,0,2,5,6};
+		
+		int i=0;
+		int count=0;
+		int minsize=0;
+		int pt=0;
+		int finalst=0;
+		int finalen=0;
+		while(i<arr1.length && i<arr2.length)
+		{
+			if(arr1[i]==arr2[i])
+			{
+				count++;
+			
+			}
+			else
+			{
+				if(count>minsize)
+				{
+					minsize=count;
+					count=0;
+					finalst=pt;
+					finalen=count;
+					
+				}
+				pt=pt+1;
+			}
+			i++;
+				
+		}
+		
+		for(int j=finalst;j<=finalen+count;j++)
+		{
+			System.out.println(arr1[j]);
+		}
+		
+		
+		
+	}
+
+}

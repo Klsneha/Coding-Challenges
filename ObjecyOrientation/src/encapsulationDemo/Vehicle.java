@@ -1,0 +1,33 @@
+package encapsulationDemo;
+
+public class Vehicle {
+
+	private int Number;
+	private int cc;
+	private int speed;
+	Vehicle(int cust)
+	{
+		System.out.println("welcome"+cust);
+	}
+	
+	public int getNumber() {
+		return Number;
+	}
+	public void setNumber(int number) {
+		Number = number;
+	}
+	public int getCc() {
+		return cc;
+	}
+	public void setCc(int cc) {
+		this.cc = cc;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;EquiJoin&apos; to &apos;equijoin&apos;&#x0D;&#x0A;- Original project: &apos;DDS&apos;&#x0D;&#x0A;- Original element: &apos;EquiJoin&apos;&#x0D;&#x0A;- Renamed element: &apos;equijoin&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;EquiJoin&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{EquiJoin.java[EquiJoin" matchStrategy="1" name="equijoin" qualified="false" references="true" similarDeclarations="false" stamp="1542413401947" textual="false" version="1.0"/>
+</session>

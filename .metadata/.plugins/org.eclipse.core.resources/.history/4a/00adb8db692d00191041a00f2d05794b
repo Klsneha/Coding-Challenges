@@ -1,0 +1,77 @@
+package PanCakeSorting;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
+public class Solution {
+	
+public List<Integer> pancakeSort(int[] A) {
+        
+   int num[]=new int[A.length];
+   for(int i=0;i<num.length;i++)
+   {
+	   num[i]=A[i];
+   }
+   Arrays.sort(A);
+   List<Integer> li=new ArrayList<Integer>();
+   int len=num.length;
+   while(!Arrays.equals(A,num))
+   {
+	   int max=num[0];
+	   
+	   int index=0;
+	   for(int i=1;i<len;i++)
+	   {
+		   if(num[i]>max)
+		   {
+			   max=num[i];
+			   index=i;
+		   }
+	   }
+	   li.add(index+1);
+	   Stack<Integer> st=new Stack<Integer>();
+	   for(int i=0;i<=index;i++)
+	   {
+		   st.push(num[i]);
+	   }
+	   
+	   for(int i=0;i<=index;i++)
+	   {
+		   num[i]=st.pop();
+	   }
+	   
+	   for(int i=0;i<len;i++)
+	   {
+		   st.push(num[i]);
+	   }
+	   li.add(len);
+	   for(int j=0;j<len;j++)
+	   {
+		   num[j]=st.pop();
+	   }
+	   len--;
+	   
+   }
+   
+   return li;
+        
+  }
+
+public static void main(String args[])
+{
+	int arr[]= {3,2,4,1};
+	Solution s=new Solution();
+	//s.pancakeSort(arr);
+	List<Integer> li=s.pancakeSort(arr);
+	for(int i=0;i<li.size();i++)
+	{
+		System.out.println(li.get(i));
+	}
+	
+	
+	
+}
+
+}

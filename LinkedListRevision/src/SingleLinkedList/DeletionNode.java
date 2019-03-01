@@ -1,0 +1,90 @@
+package SingleLinkedList;
+
+public class DeletionNode {
+	Node head;
+	Node tail;
+	class Node{
+		int data;
+		Node next;
+		Node(int d)
+		{
+			this.data=d;
+			next=null;
+		}
+	}
+	
+	public void deleteNode(int d)
+	{
+		Node n=head;
+		Node prev=null;
+		
+			if(n.data==d)
+			{
+					head=n.next;
+					return;
+					
+			}
+			
+			/*while(n.next!=null)
+			{
+				if(n.next.data==d)
+				{
+					n.next=n.next.next;
+					break;
+				}
+				n=n.next;
+			}*/
+			
+			while(n!=null && n.data!=d)
+			{
+				prev=n;
+				n=n.next;
+			}
+			
+			if(n==null)
+				return;
+			
+			prev.next=n.next;
+		
+	}
+	
+	public void append(int d)
+	{
+		Node new_node=new Node(d);
+		if(head==null)
+		{
+			head=new_node;
+			tail=new_node;
+		}
+		else if(tail!=null)
+		{
+			tail.next=new_node;
+			tail=new_node;
+		}
+	}
+	
+	public void traversal()
+	{
+		Node n=head;
+		while(n!=null)
+		{
+			System.out.println(n.data);
+			n=n.next;
+		}
+	}
+	public static void main(String args[])
+	{
+		DeletionNode d=new DeletionNode();
+		d.append(0);
+		d.append(1);
+		d.append(2);
+		d.append(3);
+		d.append(4);
+		d.append(5);
+		d.traversal();
+		d.deleteNode(7);
+		d.traversal();
+		
+		
+	}
+}

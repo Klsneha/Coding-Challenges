@@ -1,0 +1,23 @@
+package PalindromicSubString;
+
+public class Solution {
+	
+public int countSubstrings(String s) {
+	
+	for(int i=0;i<s.length();i++)
+	{
+		for(int j=i+1;j<s.length();j++)
+		{
+			System.out.println(s.substring(i, j));
+		}
+	}
+      return 0;  
+    }
+public static void main(String[] args) {
+	
+	Solution s=new Solution();
+	String str="aaaba";
+	System.out.println(s.countSubstrings(str));
+}
+
+}
